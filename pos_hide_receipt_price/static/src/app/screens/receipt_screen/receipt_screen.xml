@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-name="pos_hide_receipt_price.ReceiptScreen" t-inherit="point_of_sale.ReceiptScreen" t-inherit-mode="extension">
+        <xpath expr="//div[@class='buttons my-3']" position="after">
+            <button class="button print btn btn-lg btn-secondary w-100 py-3"
+                    t-on-click="printReceiptWithoutPrice" t-if="pos.config.pos_hide_receipt_price"
+                    ref="receipt-without-prices-btn">
+                <i class="fa fa-print ms-2"></i>
+                Print receipt without prices
+            </button>
+
+        </xpath>
+    </t>
+
+</templates>

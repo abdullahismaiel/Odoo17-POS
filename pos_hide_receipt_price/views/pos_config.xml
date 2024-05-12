@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="pos_config_form_inherit" model="ir.ui.view">
+            <field name="name">pos.config.form</field>
+            <field name="model">pos.config</field>
+            <field name="inherit_id" ref="point_of_sale.pos_config_view_form"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[last()]" position="before">
+                    <setting string="Print Receipt without Prices" help="Configure receipt settings">
+                        <field name="pos_hide_receipt_price" />
+                        <div class="content-group" invisible="not pos_hide_receipt_price">
+                        </div>
+                    </setting>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
